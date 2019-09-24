@@ -1,6 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from'./router.jsx';
-//if you have a theme library, import it here
+import { createStore } from 'redux';
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+const initialState = {
+  board: [
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+    [null, null, null, null, null, null, null, null, null, null, ],
+  ]
+}
+
+function reducer (state=initialState, action) {
+  return state;
+}
+
+const store = createStore(reducer);
+
+ReactDOM.render(<Root store={store}/>, document.getElementById('root'));

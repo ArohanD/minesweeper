@@ -1,15 +1,22 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 class Home extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {};
-    }
+
     render() {
         return (
-            <div>You are on the home page</div>
+            <div id='game_container'>
+                <h1>Minesweeper</h1>
+
+            </div>
         )
     }
 }
 
-export default Home;
+function mapStateToProps(state) {
+    return {
+        board: state.board
+    }
+}
+
+export default connect(mapStateToProps)(Home);
